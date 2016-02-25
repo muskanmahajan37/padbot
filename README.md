@@ -1,16 +1,8 @@
-## MetaWare
+## Padbot Cordova
 
-Example using mbientlab's [MetaWare](http://mbientlab.com/product/).
+Just A Simple & Uglify Hack for Padbot PA4800
 
-Read values from the button press on the MetaWear.
-
-Operate the Motor and Buzzer on the MetaWare.
-
-Hardware
-
- * [MetaWare](http://mbientlab.com/product/)
-
-Install
+##Setup
 
     $ cordova platform add android ios
     $ cordova plugin add cordova-plugin-ble-central
