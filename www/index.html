@@ -28,6 +28,7 @@
 </div>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/nipplejs.min.js"></script>
+<!--<script type="text/javascript" src="js/socket.io-1.4.5.js"></script>-->
 <script>
     var options = {
         zone: document.getElementById('dynamic'),
@@ -41,6 +42,30 @@
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
     app.initialize();
+
+    function loadScript(url, callback) {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = url;
+        script.onload = callback;
+        head.appendChild(script);
+    }
+
+    function init() {
+        loadScript('js/socket.io-1.4.5.js', function () {
+            alert("-------------");
+            var socket = io.connect('http://10.29.2.168:15100/');
+            socket.on('keyboard message to other client event', function (data) {
+                console.log(data);
+            });
+            socket.on('keyboard message from client event', function (data) {
+                console.log(data);
+            });
+        });
+    }
+    init();
+    document.addEventListener("deviceready", init, false);
 </script>
 </body>
 </html>

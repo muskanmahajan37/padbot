@@ -78,28 +78,54 @@ var app = {
         var onConnect = function(peripheral) {
             sendButton.dataset.deviceId = deviceId;
             disconnectButton.dataset.deviceId = deviceId;
-            manager.on("move", function(result, data){
-                var commandData = "";
-                if (data.direction.angle === "left") {
-                    commandData = "X2";
-                }
-                if (data.direction.angle === "right") {
-                    commandData = "X3";
-                }
-                if (data.direction.angle === "up") {
-                    commandData = "X1";
-                }
-                if (data.direction.angle === "down") {
-                    commandData = "X4";
-                }
 
-                ble.writeWithoutResponse(
-                    deviceId,
-                    bluefruit.serviceUUID,
-                    bluefruit.txCharacteristic,
-                    stringToBytes(commandData), null, null
-                );
-            });
+            //var socket = io.connect('http://10.29.2.168:15100/');
+            //socket.on('keyboard message to other client event', function (data) {
+            //    console.log(data.action.action);
+            //    var commandData = '0';
+            //    if(data.action.action === 'w') {
+            //        commandData = "X1";
+            //    }
+            //    if(data.action.action === 'a') {
+            //        commandData = "X2";
+            //    }
+            //    if(data.action.action === 's') {
+            //        commandData = "X3";
+            //    }
+            //    if(data.action.action === 'd') {
+            //        commandData = "X4";
+            //    }
+            //
+            //    ble.writeWithoutResponse(
+            //        deviceId,
+            //        bluefruit.serviceUUID,
+            //        bluefruit.txCharacteristic,
+            //        stringToBytes(commandData), null, null
+            //    );
+            //});
+
+            //manager.on("move", function(result, data){
+            //    var commandData = "";
+            //    if (data.direction.angle === "left") {
+            //        commandData = "X2";
+            //    }
+            //    if (data.direction.angle === "right") {
+            //        commandData = "X3";
+            //    }
+            //    if (data.direction.angle === "up") {
+            //        commandData = "X1";
+            //    }
+            //    if (data.direction.angle === "down") {
+            //        commandData = "X4";
+            //    }
+            //
+            //    ble.writeWithoutResponse(
+            //        deviceId,
+            //        bluefruit.serviceUUID,
+            //        bluefruit.txCharacteristic,
+            //        stringToBytes(commandData), null, null
+            //    );
+            //});
             app.showDetailPage();
 
         };
