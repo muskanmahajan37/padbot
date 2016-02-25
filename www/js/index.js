@@ -80,17 +80,17 @@ var app = {
             disconnectButton.dataset.deviceId = deviceId;
             manager.on("move", function(result, data){
                 var commandData = "";
-                if (data.direction.x === "left" && data.direction.y === "down") {
-                    commandData = "XP";
+                if (data.direction.angle === "left") {
+                    commandData = "X2";
                 }
-                if (data.direction.x === "right" && data.direction.y === "down") {
-                    commandData = "XT";
+                if (data.direction.angle === "right") {
+                    commandData = "X3";
                 }
-                if (data.direction.x === "right" && data.direction.y === "up") {
-                    commandData = "XL";
+                if (data.direction.angle === "up") {
+                    commandData = "X1";
                 }
-                if (data.direction.x === "left" && data.direction.y === "up") {
-                    commandData = "XH";
+                if (data.direction.angle === "down") {
+                    commandData = "X4";
                 }
 
                 ble.writeWithoutResponse(
