@@ -73,12 +73,35 @@ var app = {
         deviceList.appendChild(listItem);
     },
     connect: function(e) {
-        var deviceId = e.target.dataset.deviceId,
+        var deviceId = e.target.dataset.deviceId;
 
-        onConnect = function(peripheral) {
+        var onConnect = function(peripheral) {
             sendButton.dataset.deviceId = deviceId;
             disconnectButton.dataset.deviceId = deviceId;
+            manager.on("move", function(result, data){
+                var commandData = "";
+                if (data.direction.x === "left" && data.direction.y === "down") {
+                    commandData = "XP";
+                }
+                if (data.direction.x === "right" && data.direction.y === "down") {
+                    commandData = "XT";
+                }
+                if (data.direction.x === "right" && data.direction.y === "up") {
+                    commandData = "XL";
+                }
+                if (data.direction.x === "left" && data.direction.y === "up") {
+                    commandData = "XH";
+                }
+
+                ble.writeWithoutResponse(
+                    deviceId,
+                    bluefruit.serviceUUID,
+                    bluefruit.txCharacteristic,
+                    stringToBytes(commandData), null, null
+                );
+            });
             app.showDetailPage();
+
         };
 
         ble.connect(deviceId, onConnect, app.onError);
