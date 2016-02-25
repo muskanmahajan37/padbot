@@ -103,7 +103,7 @@ var app = {
         ble.writeWithoutResponse(
             deviceId,
             bluefruit.serviceUUID,
-            bluefruit.rxCharacteristic,
+            bluefruit.txCharacteristic,
             data, success, failure
         );
     },
