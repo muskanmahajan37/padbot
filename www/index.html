@@ -10,69 +10,6 @@
 </head>
 <body>
 <div class="app">
-    <script language="javascript" type="text/javascript">
-
-        var wsUri = "ws://echo.websocket.org/";
-        var output;
-
-        function init()
-        {
-            output = document.getElementById("output");
-            testWebSocket();
-        }
-
-        function testWebSocket()
-        {
-            websocket = new WebSocket(wsUri);
-            websocket.onopen = function(evt) { onOpen(evt) };
-            websocket.onclose = function(evt) { onClose(evt) };
-            websocket.onmessage = function(evt) { onMessage(evt) };
-            websocket.onerror = function(evt) { onError(evt) };
-        }
-
-        function onOpen(evt)
-        {
-            writeToScreen("CONNECTED");
-            doSend("WebSocket rocks");
-        }
-
-        function onClose(evt)
-        {
-            writeToScreen("DISCONNECTED");
-        }
-
-        function onMessage(evt)
-        {
-            writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
-            websocket.close();
-        }
-
-        function onError(evt)
-        {
-            writeToScreen('<span style="color: red;">ERROR:</span> ' + JSON.stringify(evt));
-        }
-
-        function doSend(message)
-        {
-            writeToScreen("SENT: " + message);
-            websocket.send(message);
-        }
-
-        function writeToScreen(message)
-        {
-            var pre = document.createElement("p");
-            pre.style.wordWrap = "break-word";
-            pre.innerHTML = message;
-            output.appendChild(pre);
-        }
-
-        window.addEventListener("load", init, false);
-
-    </script>
-
-    <h2>WebSocket Test</h2>
-
-    <div id="output"></div>
     <h1>Padbot</h1>
     <div id="mainPage">
         <ul id="deviceList">
@@ -93,7 +30,6 @@
 </div>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/nipplejs.min.js"></script>
-<script type="text/javascript" src="js/socket.io-1.4.5.js"></script>
 <script>
     var options = {
         zone: document.getElementById('dynamic'),
@@ -106,14 +42,6 @@
 </script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
-    var socket = io.connect('ws://10.29.2.168:15100/');
-    socket.on('keyboard message to other client event', function (data) {
-        alert(data);
-    });
-    socket.on('keyboard message from client event', function (data) {
-        alert(data);
-    });
-
     app.initialize();
 </script>
 </body>
