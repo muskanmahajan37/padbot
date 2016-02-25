@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.megster.metawear" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>MetaWear</name>
+<widget id="com.phodal.padbot" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Padbot</name>
   <description>
-        A sample Apache Cordova application that connects to mbientlab's MetaWear.
+        Cordova Application with Padbot
     </description>
-  <author href="https://github.com/don">
-        Don Coleman
+  <author href="https://github.com/phodal">
+        Fengda Huang
     </author>
   <content src="index.html"/>
   <access origin="*"/>
