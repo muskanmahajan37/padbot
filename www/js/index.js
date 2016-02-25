@@ -79,14 +79,6 @@ var app = {
             sendButton.dataset.deviceId = deviceId;
             disconnectButton.dataset.deviceId = deviceId;
 
-            var socket = io.connect('http://10.29.2.168:15100/');
-            socket.on('keyboard message to other client event', function (data) {
-                alert(data);
-            });
-            socket.on('keyboard message from client event', function (data) {
-                alert(data);
-            });
-
             manager.on("move", function(result, data){
                 var commandData = "";
                 if (data.direction.angle === "left") {
