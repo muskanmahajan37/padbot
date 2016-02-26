@@ -8,3 +8,4 @@ Just A Simple & Uglify Hack for Padbot PA4800
     $ cordova plugin add cordova-plugin-ble-central
     $ cordova run
 
+More Command see in **'PHRobotControlActivity.java'**
