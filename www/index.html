@@ -41,7 +41,17 @@
     var manager = nipplejs.create(options);
 </script>
 <script type="text/javascript" src="js/index.js"></script>
+<!--<script type="text/javascript" src="js/ios-hack.js"></script>-->
+<script type="text/javascript" src="js/socket.io-1.4.5.js"></script>
 <script type="text/javascript">
+    var socket = io.connect('ws://10.29.2.168:15100/');
+    socket.on('connect', function() {
+        socket.on("keyboard message to other client event", function (data) {
+            console.log("recieved Keyboard Message From Server");
+            alert(data.valueOf());
+        });
+    });
+
     app.initialize();
 </script>
 </body>
