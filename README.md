@@ -1,6 +1,9 @@
-## Padbot Cordova
+Padbot Cordova
+===
 
 Just A Simple & Uglify Hack for Padbot PA4800
+
+Hack It [我是如何Hack掉一个机器人](https://www.phodal.com/blog/how-to-hack-a-robot/)
 
 ##Setup
 
