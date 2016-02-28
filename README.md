@@ -3,7 +3,7 @@ Padbot Cordova
 
 Just A Simple & Uglify Hack for Padbot PA4800
 
-文档: 《[我是如何Hack掉一个机器人](https://www.phodal.com/blog/how-to-hack-a-robot/)》
+文档: 《[我是如何Hack掉一个机器人](https://www.phodal.com/blog/how-to-hack-a-robot/)》
 
 ##Devel Setup
 
