@@ -3,9 +3,9 @@ Padbot Cordova
 
 Just A Simple & Uglify Hack for Padbot PA4800
 
-Hack It: 《[我是如何Hack掉一个机器人](https://www.phodal.com/blog/how-to-hack-a-robot/)》
+文档: 《[我是如何Hack掉一个机器人](https://www.phodal.com/blog/how-to-hack-a-robot/)》
 
-##Setup
+##Devel Setup
 
     $ cordova platform add android ios
     $ cordova plugin add cordova-plugin-ble-central
